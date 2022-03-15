@@ -1,0 +1,8 @@
+dir.txt
+test1.txt
+test11.txt
+test111.txt
+test2.txt
+test3.txt_test
+testEcho.bat
+testRem.bat
