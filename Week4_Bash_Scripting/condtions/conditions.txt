@@ -1,0 +1,10 @@
+an expression can be string comparison, numeric comparison, file operators and logical operators
+
+String comparisons: == [ s1 == s2 ], != [ s1 != s2 ], -n [ -n s1 ], -z [ -z s2 ]
+Number comparisons: -eq, -ge, -le, -ne, -gt, -lt
+Files operators: -d, -f, -e, -r (read permission), -w, -x, -s (has a length greater than 0)
+[ -d fname ]
+
+Logical operators: !, -o, -a
+
+if [ "$num" -gt 1 -a "$num" -lt 10 ];
