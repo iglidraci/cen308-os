@@ -2,11 +2,12 @@ import threading
 
 from H2O import H2O
 from order import Foo
+from philosophers import DP1, DP2, DPBad
 
 
 def water():
     h2o = H2O()
-    inp = "OOHHHH"
+    inp = "OOHHHHOOHHHHHHO"
     threads = []
     for i in range(len(inp)):
         if inp[i] == 'H':
@@ -19,9 +20,23 @@ def water():
         t.join()
 
 
+def dining_philosophers():
+    philosophers = ["Descartes", "Socrates", "Aurelius", "Machiavelli", "Thales"]
+    dp = DP1(philosophers)
+    n = 5
+    # n is the number of times each philosopher will call the function
+    threads = [threading.Thread(target=dp.eat, args=(i % 5,)) for i in range(5*n)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    print("Done")
+
+
 def main():
     # foo_order()
-    water()
+    # water()
+    dining_philosophers()
 
 
 def foo_order():
